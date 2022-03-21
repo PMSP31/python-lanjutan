@@ -16,6 +16,10 @@ class Person :
     def printname(self) :
         print(self.fname, self.lname)
 
+    # add method
+    def greet(self) :
+        print(f"Halo nama saya {self.fname} {self.lname}.")
+
 # Child Class
 # class Student mewarisi semua properties dan method dari Class Person
 # class Student(Person) :
@@ -25,16 +29,16 @@ class Person :
 # x.printname()
 
 class Student(Person) :
-# Overrides
     def __init__(self, fname, lname, year):
         # Person.__init__(self, fname, lname)
         super().__init__(fname, lname) # super() = nama Parent Class
         # add properties
         self.age = year
-
-    # add method
+    # Override
     def greet(self) :
         print(f"Halo nama saya {self.fname} {self.lname}, saya berumur {self.age} tahun.")
 
-x = Student("Paul", "Mahardika", 17)
-x.greet()
+    
+
+paul = Student("Paul", "Mahardika", 17)
+paul.greet()
